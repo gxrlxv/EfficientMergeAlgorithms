@@ -24,12 +24,20 @@ void binary_insertion(IterContainer& arr, const T& elem) {
     arr.insert(l, elem);
 }
 
+template <typename IterContainer>
+int get_amount_of_comptassions(IterContainer& arr) {
+    return std::floor( std::log2(arr.size())) + 1;
+}
+
 
 int main() {
     // Example using std::vector
     std::vector<int> vec = {1, 3, 5, 7, 9};
-    binary_insertion(vec, 4);
 
+    int vec_amount_of_comprassions = get_amount_of_comptassions(vec);
+    std::cout << "Expected amount of comprassions: " << vec_amount_of_comprassions << std::endl;
+
+    binary_insertion(vec, 4);
     std::cout << "Vector after insertion: ";
     for (const auto& v : vec) {
         std::cout << v << " ";
@@ -38,8 +46,11 @@ int main() {
 
     // Example using std::list
     std::list<int> lst =  {1, 3, 5, 7, 9};
-    binary_insertion(lst, 4);
+    
+    int list_amount_of_comprassions = get_amount_of_comptassions(lst);
+    std::cout << "Expected amount of comprassions: " << list_amount_of_comprassions << std::endl;
 
+    binary_insertion(lst, 4);
     std::cout << "List after insertion: ";
     for (const auto& l : lst) {
         std::cout << l << " ";
