@@ -1,4 +1,4 @@
-
+// Binary Merge Algorithm (https://github.com/rklaehn/binary-merge)
 #include <algorithm>
 #include <iostream>
 #include <vector>
