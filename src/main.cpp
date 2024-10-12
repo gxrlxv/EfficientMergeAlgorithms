@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "framework/framework.h"
+#include "algorithms/algorithms.hpp"
 
 int main() {
     int size_a = 100; // Size of first sorted vector
@@ -18,6 +19,24 @@ int main() {
         std::cout << result[i] << " ";
     }
     std::cout << std::endl;
+
+    // Two way merge
+    std::vector<int> result_two_way_merge = two_way_merge(a, b);
+    
+    if (result == result_two_way_merge) {
+        std::cout << "Two way merge result is correct" << std::endl;
+    } else {
+        std::cout << "Two way merge result is incorrect" << std::endl;
+    }
+
+    // Hwang-Lin Merging Algorithm
+    // std::vector<int> result_hla = hla(a, b);
+
+    // if (result == result_hla) {
+    //     std::cout << "Hwang-Lin result is correct" << std::endl;
+    // } else {
+    //     std::cout << "Hwang-Lin result is incorrect" << std::endl;
+    // }
 
     return 0;
 }
