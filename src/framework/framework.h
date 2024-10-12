@@ -3,6 +3,6 @@
 
 #include <vector>
 
-void generate_random_vectors(int size_a, int size_b, std::vector<int>& a, std::vector<int>& b, std::vector<int>& result);
+void generate_sorted_vectors(int size_a, int size_b, std::vector<int>& a, std::vector<int>& b, std::vector<int>& result);
 
 #endif // INPUT_GENERATOR_H

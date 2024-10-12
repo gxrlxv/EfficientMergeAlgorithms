@@ -10,8 +10,7 @@ int main() {
     std::vector<int> b;
     std::vector<int> result;
 
-    // Generate large sorted vectors
-    generate_random_vectors(size_a, size_b, a, b, result);
+    generate_sorted_vectors(size_a, size_b, a, b, result);
 
     // Optionally print some elements of the merged result for verification
     std::cout << "First 10 elements of merged vector: ";
