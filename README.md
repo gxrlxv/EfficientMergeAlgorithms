@@ -1,6 +1,9 @@
 # EfficientMergeAlgorithms
 
-This repository is part of my thesis on optimizing the merging of pre-sorted arrays. The goal is to implement and analyze various algorithms that efficiently merge arrays while minimizing time and space complexity. The project includes several well-known algorithms, with plans to expand to more advanced techniques.
+## Authors
+
+- **Sergei Gorlov** - [gorlov1207@gmail.com](mailto:gorlov1207@gmail.com)
+- **Igor Stikentzin** - [xerminatrix@gmail.com](mailto:xerminatrix@gmail.com)
 
 ## Implemented Algorithms
 
@@ -11,3 +14,4 @@ This repository is part of my thesis on optimizing the merging of pre-sorted arr
 ## Planned Implementations
 
 - **A Simple Algorithm for Stable Minimum Storage Merging** by Pok-Son Kim and Arne Kutzner: A sophisticated algorithm focusing on minimizing storage requirements during the merge process.
+- **Manacher Improved Hwang-Lin Version**: A further optimized version of the Hwang-Lin Merging Algorithm incorporating improvements by Manacher.
