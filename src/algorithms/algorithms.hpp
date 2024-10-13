@@ -96,7 +96,7 @@ IterContainer hla(const IterContainer& a, const IterContainer& b) {
         }
 
         // H5
-        if (*(a_right - 1) <= *(b_right - 1)) { // a_right = 3426, b_right = 3451, a_right - 1 = 3368, b_right - 1 = 3368
+        if (*(a_right - 1) <= *(b_right - 1)) {
             *(--k_iter) = *(b_right - 1);
             b_right--;
             continue;
