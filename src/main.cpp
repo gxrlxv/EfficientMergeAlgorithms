@@ -20,7 +20,9 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Two way merge
+
+    // Two Way Merge
+    std::cout << "Running two way merge" << std::endl;
     std::vector<int> result_two_way_merge = two_way_merge(a, b);
     
     if (result == result_two_way_merge) {
@@ -30,6 +32,7 @@ int main() {
     }
 
     // Hwang-Lin Merging Algorithm
+    // std::cout << "Running Hwang-Lin merging algorithm" << std::endl;
     // std::vector<int> result_hla = hla(a, b);
 
     // if (result == result_hla) {
@@ -37,6 +40,17 @@ int main() {
     // } else {
     //     std::cout << "Hwang-Lin result is incorrect" << std::endl;
     // }
+
+
+    // Binary Merge
+    std::cout << "Running binary merge" << std::endl;
+    std::vector<int> result_binary_merge = binary_merge(a, b);
+
+    if (result == result_binary_merge) {
+        std::cout << "Binary merge result is correct" << std::endl;
+    } else {
+        std::cout << "Binary merge result is incorrect" << std::endl;
+    }
 
     return 0;
 }
