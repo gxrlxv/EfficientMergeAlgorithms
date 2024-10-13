@@ -6,6 +6,7 @@
 #include <list>
 #include <array>
 #include <cmath>
+#include <functional>
 
 // Standard merging of 2 sorted arrays with n and m lenghts
 template <typename IterContainer>
