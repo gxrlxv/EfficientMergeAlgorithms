@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "framework/framework.h"
+#include "framework/framework.hpp"
 #include "algorithms/algorithms.hpp"
 
 int main() {
@@ -32,14 +32,14 @@ int main() {
     }
 
     // Hwang-Lin Merging Algorithm
-    // std::cout << "Running Hwang-Lin merging algorithm" << std::endl;
-    // std::vector<int> result_hla = hla(a, b);
+    std::cout << "Running Hwang-Lin merging algorithm" << std::endl;
+    std::vector<int> result_hla = hla(a, b);
 
-    // if (result == result_hla) {
-    //     std::cout << "Hwang-Lin result is correct" << std::endl;
-    // } else {
-    //     std::cout << "Hwang-Lin result is incorrect" << std::endl;
-    // }
+    if (result == result_hla) {
+        std::cout << "Hwang-Lin result is correct" << std::endl;
+    } else {
+        std::cout << "Hwang-Lin result is incorrect" << std::endl;
+    }
 
 
     // Binary Merge
