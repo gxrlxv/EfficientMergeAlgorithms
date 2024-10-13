@@ -69,9 +69,9 @@ IterContainer hla(const IterContainer& a, const IterContainer& b) {
         int t;
         auto [m, n] = std::array<int, 2>{{static_cast<int>(std::distance(a_left, a_right)), static_cast<int>(std::distance(b_left, b_right))}};
         if (m > n)
-            t = std::floor(std::log2(m / n));
+            t = std::min(static_cast<int>(std::floor(std::log2(m / n))), n - 1);
         else
-            t = std::floor(std::log2(n / m));
+            t = std::min(static_cast<int>(std::floor(std::log2(n / m))), m - 1);
         
         // H2
         if (*(a_right - 1) < *(b_right - std::pow(2, t))) {
