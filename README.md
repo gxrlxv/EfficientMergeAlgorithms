@@ -10,6 +10,7 @@
 - **Two Way Merge Algorithm**: The traditional method for merging two sorted arrays of lengths `n` and `m`.
 - **Binary Insertion for One Element**: An algorithm for inserting a single element into a sorted array using binary search to find the correct position.
 - **Hwang-Lin Merging Algorithm**: A classic algorithm designed to reduce the number of comparisons during the merge process.
+- **Binary Merge Algorithm**: An optimized algorithm using binary search for efficient merging.
 
 ## Planned Implementations
 
