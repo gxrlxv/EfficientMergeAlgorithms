@@ -4,6 +4,9 @@
 #include <algorithm>
 
 void generate_sorted_vectors(int size_a, int size_b, std::vector<int>& a, std::vector<int>& b, std::vector<int>& result){
+    // Seed for random number generation
+    srand(static_cast<unsigned int>(time(nullptr)));
+
     a.resize(size_a);
     b.resize(size_b);
     result.resize(size_a + size_b);
