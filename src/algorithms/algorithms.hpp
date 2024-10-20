@@ -63,21 +63,25 @@ IterContainer hla(const IterContainer& a, const IterContainer& b) {
     IterContainer r(a.size() + b.size()); // Resulting vector
 
     typename IterContainer::iterator k_iter = r.end(); // Pointer for insertion
-    
+
     while (a_left != a_right && b_left != b_right) {
         // H1
-        int t;
+        int t, s;
         auto [m, n] = std::array<int, 2>{{static_cast<int>(std::distance(a_left, a_right)), static_cast<int>(std::distance(b_left, b_right))}};
-        if (m > n)
-            t = std::min(static_cast<int>(std::floor(std::log2(m / n))), n - 1);
-        else
-            t = std::min(static_cast<int>(std::floor(std::log2(n / m))), m - 1);
+        if (m > n) {
+            t = std::floor(std::log2(m / n));
+            s = std::min(static_cast<int>(std::pow(2, t)), n);
+        }
+        else {
+            t = std::floor(std::log2(n / m));
+            s = std::min(static_cast<int>(std::pow(2, t)), m);
+        }
         
         // H2
-        if (*(a_right - 1) < *(b_right - std::pow(2, t))) {
-            k_iter -= std::pow(2, t);
-            std::copy(b_right - std::pow(2, t), b_right, k_iter); // copy elements from (b_right - std::pow(2, t) + 1) to b_right
-            b_right -= std::pow(2, t);
+        if (*(a_right - 1) < *(b_right - s)) {
+            k_iter -= s;
+            std::copy(b_right - s, b_right, k_iter); // copy elements from (b_right - s) to b_right to result vector
+            b_right -= s;
             continue;
         }
 
@@ -89,10 +93,10 @@ IterContainer hla(const IterContainer& a, const IterContainer& b) {
         }
 
         // H4
-        if (*(b_right - 1) < *(a_right - std::pow(2, t))) {
-            k_iter -= std::pow(2, t);
-            std::copy(a_right - std::pow(2, t), a_right, k_iter); // copy elements from (a_right - std::pow(2, t) + 1) to a_right
-            a_right -= std::pow(2, t);
+        if (*(b_right - 1) < *(a_right - s)) {
+            k_iter -= s;
+            std::copy(a_right - s, a_right, k_iter); // copy elements from (a_right - s) to a_right to result vector
+            a_right -= s;
             continue;
         }
 
