@@ -1,6 +1,7 @@
 #include "framework.hpp"
 #include <vector>
-#include <cstdlib> 
+#include <ctime>
+#include <cstdlib>
 #include <algorithm>
 
 void generate_sorted_vectors(int size_a, int size_b, std::vector<int>& a, std::vector<int>& b, std::vector<int>& result){
