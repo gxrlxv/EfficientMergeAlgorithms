@@ -5,7 +5,7 @@
 
 int main() {
     int size_a = 100; // Size of first sorted vector
-    int size_b = 100; // Size of second sorted vector
+    int size_b = 10000000; // Size of second sorted vector
 
     std::vector<int> a;
     std::vector<int> b;

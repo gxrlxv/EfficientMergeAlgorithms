@@ -70,33 +70,33 @@ IterContainer hla(const IterContainer& a, const IterContainer& b) {
         auto [m, n] = std::array<int, 2>{{static_cast<int>(std::distance(a_left, a_right)), static_cast<int>(std::distance(b_left, b_right))}};
         if (m > n) {
             t = std::floor(std::log2(m / n));
-            s = std::min(static_cast<int>(std::pow(2, t)), n);
+            s = std::pow(2, t);
+
+            // H4
+            if (*(b_right - 1) < *(a_right - s)) {
+                k_iter -= s;
+                std::copy(a_right - s, a_right, k_iter); // copy elements from (a_right - s) to a_right to result vector
+                a_right -= s;
+                continue;
+            }
         }
         else {
             t = std::floor(std::log2(n / m));
-            s = std::min(static_cast<int>(std::pow(2, t)), m);
-        }
-        
-        // H2
-        if (*(a_right - 1) < *(b_right - s)) {
-            k_iter -= s;
-            std::copy(b_right - s, b_right, k_iter); // copy elements from (b_right - s) to b_right to result vector
-            b_right -= s;
-            continue;
+            s = std::pow(2, t);
+
+            // H2
+            if (*(a_right - 1) < *(b_right - s)) {
+                k_iter -= s;
+                std::copy(b_right - s, b_right, k_iter); // copy elements from (b_right - s) to b_right to result vector
+                b_right -= s;
+                continue;
+            }
         }
 
         // H3
         if (*(b_right - 1) < *(a_right - 1)) {
             *(--k_iter) = *(a_right - 1);
             a_right--;
-            continue;
-        }
-
-        // H4
-        if (*(b_right - 1) < *(a_right - s)) {
-            k_iter -= s;
-            std::copy(a_right - s, a_right, k_iter); // copy elements from (a_right - s) to a_right to result vector
-            a_right -= s;
             continue;
         }
 
