@@ -20,15 +20,24 @@ int main() {
     }
     std::cout << std::endl;
 
-
-    // Two Way Merge
-    std::cout << "Running two way merge" << std::endl;
-    std::vector<int> result_two_way_merge = two_way_merge(a, b);
+    // Tape Merge
+    std::cout << "Running tape merge" << std::endl;
+    std::vector<int> result_ape_merge = tape_merge(a, b);
     
-    if (result == result_two_way_merge) {
-        std::cout << "Two way merge result is correct" << std::endl;
+    if (result == result_ape_merge) {
+        std::cout << "Tape merge result is correct" << std::endl;
     } else {
-        std::cout << "Two way merge result is incorrect" << std::endl;
+        std::cout << "Tape merge result is incorrect" << std::endl;
+    }
+
+    // Simple binary merge
+    std::cout << "Running simple binay merge" << std::endl;
+    std::vector<int> result_simple_binary_merge = simple_binary_merge(a, b);
+    
+    if (result == result_simple_binary_merge) {
+        std::cout << "Simple binary merge result is correct" << std::endl;
+    } else {
+        std::cout << "Simple binary merge result is incorrect" << std::endl;
     }
 
     // Hwang-Lin Merging Algorithm
