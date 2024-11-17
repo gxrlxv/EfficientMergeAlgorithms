@@ -32,7 +32,9 @@ int main() {
 
     // Simple binary merge
     std::cout << "Running simple_binary_merge" << std::endl;
-    std::vector<int> result_simple_binary_merge = simple_binary_merge(a, b);
+    std::vector<int> a_copy = a;
+    std::vector<int> b_copy = b;
+    std::vector<int> result_simple_binary_merge = simple_binary_merge(a_copy, b_copy);
     
     if (result == result_simple_binary_merge) {
         std::cout << "simple_binary_merge is correct" << std::endl;
