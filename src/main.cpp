@@ -40,6 +40,13 @@ int main() {
         std::cout << "simple_binary_merge is incorrect" << std::endl;
     }
 
+    std::vector<int> result_generalized_binary_merge = generalized_binary_merge(a, b);
+    if (result == result_generalized_binary_merge) {
+        std::cout << "generalized_binary_merge is correct" << std::endl;
+    } else {
+        std::cout << "generalized_binary_merge is incorrect" << std::endl;
+    }
+
     // Hwang-Lin Merging Algorithm
     std::cout << "Running hla" << std::endl;
     std::vector<int> result_hla = hla(a, b);
