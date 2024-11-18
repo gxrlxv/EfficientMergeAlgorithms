@@ -56,6 +56,59 @@ std::vector<int> simple_binary_merge(const std::vector<int>& a, std::vector<int>
     return b;
 }
 
+
+// Generalized Binary Merge Algorithm
+std::vector<int> generalized_binary_merge(std::vector<int>& A, std::vector<int>& B) {
+    int m = A.size();
+    int n = B.size();
+
+    std::vector<int> R(m + n);
+    auto it = R.end();
+
+    while (m > 0 && n > 0) {
+        // GB1:
+        int alpha = static_cast<int>(std::log2(static_cast<double>(n) / m));
+        int x = n - static_cast<int>(std::pow(2, alpha)) + 1;
+
+        int am = A[m - 1];
+        int bx = B[x - 1];
+
+        if (am < bx) {
+            // GB2:
+            int copied_count = std::distance(B.begin() + x - 1, B.end());
+            it -= copied_count; 
+
+            std::copy(B.begin() + x - 1, B.end(), it);
+
+            B.erase(B.begin() + x - 1, B.end());
+
+            n = B.size();
+        } else {
+            // GB3
+            auto pos = std::lower_bound(B.begin(), B.begin() + x, am);
+            B.insert(pos, am);
+            A.pop_back();
+
+            m = A.size();
+            n = B.size();
+        }
+
+        if (n < m) {
+            std::swap(A, B);
+            std::swap(m, n);
+        }
+    }
+
+    it -= A.size();
+    std::copy(A.begin(), A.end(), it);
+    it -= B.size();
+    std::copy(B.begin(), B.end(), it); 
+
+    return R;
+}
+
+
+
 template <typename IterContainer, typename T>
 void binary_insertion(IterContainer& arr, const T& elem) {
     typename IterContainer::iterator l = arr.begin();
