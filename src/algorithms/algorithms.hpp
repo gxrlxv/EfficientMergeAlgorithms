@@ -174,4 +174,27 @@ IterContainer binary_merge(const IterContainer& a, const IterContainer& b) {
     return r;
 }
 
+
+template <typename IterContainer>
+IterContainer hl_static(IterContainer& a, IterContainer& b) {
+
+    size_t m = a.size(); // Size of array a
+    size_t n = b.size(); // Size of array b
+
+    // Step 1: Calculate t
+    int t = static_cast<int>(std::floor(std::log2(static_cast<double>(n) / m)));
+    // step 2
+    if (n < std::pow(2, t)) {
+        // Directly insert all elements of `a` into `b`
+        for (const auto& element : a) {
+            binary_insertion(b, element); // Use binary insertion
+        }
+    }
+
+    return b;
+}
+
+
+
+
 #endif // ALGORITHMS_H
