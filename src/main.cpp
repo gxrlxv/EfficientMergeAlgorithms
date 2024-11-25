@@ -18,16 +18,16 @@ int main() {
     for (int i = 0; i < 10 && i < result.size(); ++i) {
         std::cout << result[i] << " ";
     }
-    std::cout << std::endl;
+    std::cout << "\n" << std::endl;
 
     // Tape Merge
     std::cout << "Running tape_merge" << std::endl;
     std::vector<int> result_ape_merge = tape_merge(a, b);
     
     if (result == result_ape_merge) {
-        std::cout << "tape_merge is correct" << std::endl;
+        std::cout << "tape_merge is correct\n" << std::endl;
     } else {
-        std::cout << "tape_merge is incorrect" << std::endl;
+        std::cout << "tape_merge is incorrect\n" << std::endl;
     }
 
     // Simple binary merge
@@ -37,9 +37,9 @@ int main() {
     std::vector<int> result_simple_binary_merge = simple_binary_merge(a_copy, b_copy);
     
     if (result == result_simple_binary_merge) {
-        std::cout << "simple_binary_merge is correct" << std::endl;
+        std::cout << "simple_binary_merge is correct\n" << std::endl;
     } else {
-        std::cout << "simple_binary_merge is incorrect" << std::endl;
+        std::cout << "simple_binary_merge is incorrect\n" << std::endl;
     }
 
     // Hwang-Lin Merging Algorithm
@@ -47,9 +47,9 @@ int main() {
     std::vector<int> result_hla = hla(a, b);
 
     if (result == result_hla) {
-        std::cout << "hla is correct" << std::endl;
+        std::cout << "hla is correct\n" << std::endl;
     } else {
-        std::cout << "hla is incorrect" << std::endl;
+        std::cout << "hla is incorrect\n" << std::endl;
     }
 
 
@@ -58,9 +58,9 @@ int main() {
     std::vector<int> result_binary_merge = binary_merge(a, b);
 
     if (result == result_binary_merge) {
-        std::cout << "binary_merge is correct" << std::endl;
+        std::cout << "binary_merge is correct\n" << std::endl;
     } else {
-        std::cout << "binary_merge is incorrect" << std::endl;
+        std::cout << "binary_merge is incorrect\n" << std::endl;
     }
 
     return 0;
