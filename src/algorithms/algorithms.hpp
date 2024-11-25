@@ -10,7 +10,7 @@
 
 // Standard merging of 2 sorted arrays with n and m lenghts
 template <typename IterContainer>
-IterContainer two_way_merge(const IterContainer& a, const IterContainer& b) {
+IterContainer tape_merge(const IterContainer& a, const IterContainer& b) {
     auto [a_left, a_right, b_left, b_right] = std::array<typename IterContainer::const_iterator, 4>{{a.begin(), a.end(), b.begin(), b.end()}};
     IterContainer r(a.size() + b.size()); // Resulting vector
 
@@ -34,6 +34,26 @@ IterContainer two_way_merge(const IterContainer& a, const IterContainer& b) {
     }
 
     return r;
+}
+
+std::vector<int> simple_binary_merge(const std::vector<int>& a, std::vector<int>& b) {
+    int m = static_cast<int>(a.size()) - 1;
+    int n = static_cast<int>(b.size()) - 1;
+
+    while (m >= 0) {
+        auto b_end = b.begin();
+        std::advance(b_end, n + 1);
+
+        // binary search for the insert position
+        auto it = std::lower_bound(b.begin(), b_end, a[m]);
+
+        n = static_cast<int>(std::distance(b.begin(), it)) + 1;
+
+        b.insert(it, a[m]);
+        m--;
+    }
+
+    return b;
 }
 
 template <typename IterContainer, typename T>
