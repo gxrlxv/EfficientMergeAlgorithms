@@ -20,36 +20,47 @@ int main() {
     }
     std::cout << std::endl;
 
-
-    // Two Way Merge
-    std::cout << "Running two way merge" << std::endl;
-    std::vector<int> result_two_way_merge = two_way_merge(a, b);
+    // Tape Merge
+    std::cout << "Running tape_merge" << std::endl;
+    std::vector<int> result_ape_merge = tape_merge(a, b);
     
-    if (result == result_two_way_merge) {
-        std::cout << "Two way merge result is correct" << std::endl;
+    if (result == result_ape_merge) {
+        std::cout << "tape_merge is correct" << std::endl;
     } else {
-        std::cout << "Two way merge result is incorrect" << std::endl;
+        std::cout << "tape_merge is incorrect" << std::endl;
+    }
+
+    // Simple binary merge
+    std::cout << "Running simple_binary_merge" << std::endl;
+    std::vector<int> a_copy = a;
+    std::vector<int> b_copy = b;
+    std::vector<int> result_simple_binary_merge = simple_binary_merge(a_copy, b_copy);
+    
+    if (result == result_simple_binary_merge) {
+        std::cout << "simple_binary_merge is correct" << std::endl;
+    } else {
+        std::cout << "simple_binary_merge is incorrect" << std::endl;
     }
 
     // Hwang-Lin Merging Algorithm
-    std::cout << "Running Hwang-Lin merging algorithm" << std::endl;
+    std::cout << "Running hla" << std::endl;
     std::vector<int> result_hla = hla(a, b);
 
     if (result == result_hla) {
-        std::cout << "Hwang-Lin result is correct" << std::endl;
+        std::cout << "hla is correct" << std::endl;
     } else {
-        std::cout << "Hwang-Lin result is incorrect" << std::endl;
+        std::cout << "hla is incorrect" << std::endl;
     }
 
 
     // Binary Merge
-    std::cout << "Running binary merge" << std::endl;
+    std::cout << "Running binary_merge" << std::endl;
     std::vector<int> result_binary_merge = binary_merge(a, b);
 
     if (result == result_binary_merge) {
-        std::cout << "Binary merge result is correct" << std::endl;
+        std::cout << "binary_merge is correct" << std::endl;
     } else {
-        std::cout << "Binary merge result is incorrect" << std::endl;
+        std::cout << "binary_merge is incorrect" << std::endl;
     }
 
     return 0;
