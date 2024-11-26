@@ -224,7 +224,7 @@ IterContainer hl_static(IterContainer& a, IterContainer& b) {
             n = k;
             continue;
         }else {
-             // Step 5: Insert A[m-1] into B[k+1 to n]
+            // Step 5: Insert A[m-1] into B[k+1 to n]
             int q_start = k + 1;
             int q_end = n;
             auto it = std::upper_bound(b.begin() + q_start, b.begin() + q_end, a[m - 1]);
@@ -232,15 +232,9 @@ IterContainer hl_static(IterContainer& a, IterContainer& b) {
 
             // Insert A[m-1] into B at position q + 1
             b.insert(b.begin() + q + 1, a[m - 1]);
-            ++n;
 
-            // Update n and m according to the algorithm
-            // here could be an error
             n = n - q; 
             m = m - 1;
-
-            // Adjust B to consider only elements from position q + 1 onwards
-            b.erase(b.begin(), b.begin() + q + 1);
         }
     } 
 
