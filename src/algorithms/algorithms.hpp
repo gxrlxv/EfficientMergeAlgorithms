@@ -241,11 +241,4 @@ IterContainer hl_static(IterContainer& a, IterContainer& b) {
     return b;
 }
 
-
-
-template <typename IterContainer>
-IterContainer hl_dynamic(IterContainer& a, IterContainer& b) {
-
-}
-
 #endif // ALGORITHMS_H
