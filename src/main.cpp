@@ -68,12 +68,26 @@ int main() {
     std::cout << "Running hl_static" << std::endl;
     std::vector<int> a_copy_hl = a;
     std::vector<int> b_copy_hl = b;
-    std::vector<int> result_hl_static= hl_static(a_copy_hl, b_copy_hl);
+    std::vector<int> result_hl_static = hl_static(a_copy_hl, b_copy_hl);
 
     if (result == result_hl_static) {
         std::cout << "hl_static is correct\n" << std::endl;
     } else {
         std::cout << "hl_static is incorrect\n" << std::endl;
+    }
+
+
+    // Hwang-Lin dynamic
+    std::cout << "Running hl_dynamic" << std::endl;
+    std::vector<int> a_copy_hl_2 = a;
+    std::vector<int> b_copy_hl_2 = b;
+
+    std::vector<int> result_hl_dynamic = hl_dynamic(a, b);
+
+    if (result == result_hl_dynamic) {
+        std::cout << "hl_dynamic is correct\n" << std::endl;
+    } else {
+        std::cout << "hl_dynamic is incorrect\n" << std::endl;
     }
 
     return 0;
