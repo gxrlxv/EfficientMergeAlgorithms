@@ -233,13 +233,12 @@ IterContainer hl_static(IterContainer& a, IterContainer& b) {
             // Insert A[m-1] into B at position q + 1
             b.insert(b.begin() + q + 1, a[m - 1]);
 
-            n -=  n - q ;
+            n = q;
             m -=  1;
         }
     } 
 
     return b;
 }
-
 
 #endif // ALGORITHMS_H
